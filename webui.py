@@ -15,18 +15,21 @@ if __name__ == "__main__":
     is_lite = "lite" in sys.argv
 
     st.set_page_config(
-        "Langchain-Chatchat WebUI",
+        "智慧决策支持",
         os.path.join("img", "chatchat_icon_blue_square_v2.png"),
         initial_sidebar_state="expanded",
         menu_items={
             'Get Help': 'https://github.com/chatchat-space/Langchain-Chatchat',
             'Report a bug': "https://github.com/chatchat-space/Langchain-Chatchat/issues",
-            'About': f"""欢迎使用 Langchain-Chatchat WebUI {VERSION}！"""
+            'About': f"""欢迎使用智慧决策支持 ！"""
         }
     )
 
+    def void_page(api: ApiRequest, is_lite: bool = False):
+        vod = 'VOID'
+
     pages = {
-        "对话": {
+        "智慧决策支持": {
             "icon": "chat",
             "func": dialogue_page,
         },
@@ -34,6 +37,10 @@ if __name__ == "__main__":
             "icon": "hdd-stack",
             "func": knowledge_base_page,
         },
+        "知识图谱可视化": {
+            "icon": "hdd-stack",
+            "func": void_page,
+        }
     }
 
     with st.sidebar:
