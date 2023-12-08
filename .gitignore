@@ -173,4 +173,5 @@ cython_debug/
 .pytest_cache
 .DS_Store
 
+m3e-base
 
